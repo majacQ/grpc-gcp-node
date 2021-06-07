@@ -1,9 +1,10 @@
 {
   "name": "grpc-gcp",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Extension for supporting Google Cloud Platform specific features for gRPC.",
   "main": "build/src/index.js",
   "scripts": {
+  <<<<<<< test-config
     "build": "./codegen.sh && tsc && cp -r src/generated build/src/",
     "test-codegen": "./test/codegen.sh",
     "presystem-test": "npm run test-codegen",
@@ -14,6 +15,14 @@
     "fix": "gts fix",
     "prepare": "npm run build",
     "prettier": "prettier --write src/*.ts test/**/*.js"
+  =======
+    "build": "tsc && cp -r src/generated build/src/",
+    "system-test": "c8 mocha test/integration/*.js --reporter spec --timeout 10000",
+    "test": "c8 mocha test/unit/*.js --reporter spec",
+    "lint": "gts check",
+    "fix": "gts fix",
+    "prepare": "npm run build"
+  >>>>>>> release-v0.3.3
   },
   "repository": {
     "type": "git",
@@ -33,26 +42,32 @@
   },
   "homepage": "https://github.com/GoogleCloudPlatform/grpc-gcp-node#readme",
   "engines": {
-    "node": ">=6"
+    "node": ">=8"
   },
   "dependencies": {
-    "@grpc/grpc-js": "~1.0.2"
+    "@grpc/grpc-js": "^1.1.1"
   },
   "devDependencies": {
     "@grpc/proto-loader": "^0.5.4",
     "c8": "^7.1.1",
+  <<<<<<< test-config
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.1.3",
+  =======
+  >>>>>>> release-v0.3.3
     "google-auth-library": "^6.0.0",
     "google-gax": "^2.3.0",
-    "google-protobuf": "^3.11.4",
+    "google-protobuf": "^3.12.2",
     "grpc": "^1.24.2",
     "grpc-tools": "^1.8.1",
-    "gts": "^0.9.0",
+    "gts": "^2.0.2",
     "mocha": "^7.1.1",
+  <<<<<<< test-config
     "prettier": "^2.0.5",
+  =======
+  >>>>>>> release-v0.3.3
     "typescript": "~3.8.3"
   },
   "files": [
