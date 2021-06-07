@@ -1,13 +1,5 @@
 {
   "extends": [
     "config:base"
-  ],
-  "packageRules": [
-    {
-      "depTypeList": [
-        "devDependencies"
-      ],
-      "enabled": false
-    }
   ]
 }
