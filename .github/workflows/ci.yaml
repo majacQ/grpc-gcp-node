@@ -1,6 +1,11 @@
 on:
   push:
+  <<<<<<< release-v0.3.3
+    branches:
+      - master
+  =======
     branches: [$default-branch]
+  >>>>>>> prepare
   pull_request:
 name: ci
 jobs:
@@ -8,10 +13,17 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
+  <<<<<<< release-v0.3.3
+        node: [10]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+  =======
         node: [10, 12, 14]
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
+  >>>>>>> prepare
         with:
           node-version: ${{ matrix.node }}
       - run: node --version
@@ -23,9 +35,15 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
+  <<<<<<< release-v0.3.3
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 10
+  =======
       - uses: actions/setup-node@v2
         with:
           node-version: 14
+  >>>>>>> prepare
       - run: npm install
         working-directory: ./grpc-gcp
       - run: npm test
@@ -34,7 +52,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+  <<<<<<< release-v0.3.3
+      - uses: actions/setup-node@v1
+  =======
       - uses: actions/setup-node@v2
+  >>>>>>> prepare
         with:
           node-version: 10
       - run: npm install

@@ -1,5 +1,11 @@
 {
   "extends": [
     "config:base"
+  <<<<<<< release-v0.3.3
+  ],
+  "includePaths": [
+    "grpc-gcp/"
+  =======
+  >>>>>>> prepare
   ]
 }
